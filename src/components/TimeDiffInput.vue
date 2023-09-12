@@ -29,7 +29,7 @@
     function calcDiff() {
         const exp = /^\d{2}:\d{2}$/
 
-        if (!exp.test(first.value) && !exp.test(last.value)) return
+        if (!exp.test(first.value) || !exp.test(last.value)) return
 
         const diff = DateTime.fromISO(last.value).diff(DateTime.fromISO(first.value), 'minutes')
 
